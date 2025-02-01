@@ -11,12 +11,7 @@ const PORT = process.env.PORT || 4000
 const app = express()
 
 app.use(express.json())
-app.use(cors({
-  origin: 'https://imagify-frontend-puce.vercel.app',
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
+app.use(cors());
 
 (async () => {
   await connectDB();
