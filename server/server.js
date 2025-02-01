@@ -17,7 +17,10 @@ app.use(cors({
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
-await connectDB()
+
+(async () => {
+  await connectDB();
+})();
 
 app.use('/api/user', userRouter)
 app.use('/api/image', imageRouter)
